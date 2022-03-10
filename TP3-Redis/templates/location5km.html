@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locales</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+  <header>
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link" href="/cargar">Cargar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Locales</a>
+      </li>
+    </ul>
+  </header>
+    <form class="form-inline" method="GET" action="/location5km">
+        <div class="mb-3">
+            <label for="latitud" class="form-label">Latitud: (ejemplo: -32.47985528838145)</label>
+            <input type="double" class="form-control" name="latitud">
+        </div>
+        <div class="mb-3">
+            <label for="longitud" class="form-label">Longitud: (ejemplo: -58.23535741670090)</label>
+            <input type="double" class="form-control" name="longitud">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        
+    </form>
+<!--
+    <h3>Cervecerias:</h3>
+    {% for cantc in cervecerias %}
+    <li class="list-group-item list-group-item" name='capitulo' >{{ cantc [0] }}</li>
+    <p>
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Distancia
+      </a>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        {{ cantc [1] }} km
+      </div>
+    </div>
+    {% endfor %}
+-->
+
+    <h3>Cervecerias:</h3>
+    {% for cantc in cervecerias %}
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="HOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#COne" aria-expanded="true" aria-controls="COne">
+              {{cantc[0]}}
+            </button>
+          </h2>
+          <div id="COne" class="accordion-collapse collapse" aria-labelledby="HOne">
+            <div class="accordion-body">
+              {{cantc[1]}} km
+            </div>
+          </div>
+        </div>
+      <div/>
+    {% endfor %}
+
+    <h3>Universidades:</h3>
+    {% for cantu in universidades %}
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="HTwo">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#CTwo" aria-expanded="true" aria-controls="CTwo">
+              {{cantu[0]}}
+            </button>
+          </h2>
+          <div id="CTwo" class="accordion-collapse collapse" aria-labelledby="HTwo">
+            <div class="accordion-body">
+              {{cantu[1]}} km
+            </div>
+          </div>
+        </div>
+      <div/>
+    {% endfor %}
+    
+    <h3>Farmacias:</h3>
+    {% for cantf in farmacias %}
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="HThree">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#CThree" aria-expanded="true" aria-controls="CThree">
+            {{cantf[0]}}
+          </button>
+        </h2>
+        <div id="CThree" class="accordion-collapse collapse" aria-labelledby="Hthree">
+          <div class="accordion-body">
+            {{cantf[1]}} km
+          </div>
+        </div>
+      </div>
+    <div/>
+    {% endfor %}
+    
+    <h3>Emergencias:</h3>
+    {% for cante in emergencias %}
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="HFour">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#CFour" aria-expanded="true" aria-controls="CFour">
+            {{cante[0]}}
+          </button>
+        </h2>
+        <div id="CFour" class="accordion-collapse collapse" aria-labelledby="HFour">
+          <div class="accordion-body">
+            {{cante[1]}} km
+          </div>
+        </div>
+      </div>
+    <div/>
+    {% endfor %}
+    
+    <h3>Supermercados:</h3>
+    {% for cants in supermercados %}
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="HFive">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#CFive" aria-expanded="true" aria-controls="CFive">
+            {{cants[0]}}
+          </button>
+        </h2>
+        <div id="CFive" class="accordion-collapse collapse" aria-labelledby="HFive">
+          <div class="accordion-body">
+            {{cants[1]}} km
+          </div>
+        </div>
+      </div>
+    <div/>
+    {% endfor %}
+
+</body>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>
